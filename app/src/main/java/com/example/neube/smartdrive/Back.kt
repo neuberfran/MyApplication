@@ -12,7 +12,7 @@ class Back : BaseObservable() {
 
 //    var mDrawableResource: Int? = R.mipmap.janelafrented
 
-    var mDrawableResource: Int = 1
+    var mDrawableResource: Int = 0
  //   var mDrawableResource: Int = R.mipmap.jesqpretae
         @Bindable get
         set(value) {

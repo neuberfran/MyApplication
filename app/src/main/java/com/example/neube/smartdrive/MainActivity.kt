@@ -5,6 +5,7 @@ import android.content.Context
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.CompoundButton
 import android.widget.Toast
 import com.example.neube.smartdrive.BR.back
@@ -12,6 +13,8 @@ import com.example.neube.smartdrive.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val TAG = MainActivity::class.java.simpleName!!
 
     private val binding: ActivityMainBinding by lazy {
 
@@ -28,12 +31,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        binding.back
+
+        binding.back = viewModel.back
+
+
+        Log.d(TAG, "o valor que quero $back")
+
+        viewModel.updateDrawableResource()
+
+        
+   //     displayToast(message = "o valor que quero $back")
+
     //    binding.setBack(back)
 
      //   binding.back = viewModel.back
 
-  //      toggleButton1.setBackgroundResource(viewModel.back.mDrawableResource)
+
+ //      toggleButton1.setBackgroundResource(back)
+
+        //      toggleButton1.setBackgroundResource(viewModel.back.mDrawableResource)
    //     toggleButton1.setOnClickListener { viewModel.updateDrawableResource()}
 //
 //        toggleButton1.setOnCheckedChangeListener { buttonView, isChecked ->

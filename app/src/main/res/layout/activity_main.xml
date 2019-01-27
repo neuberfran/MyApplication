@@ -4,6 +4,7 @@
 
     <data>
         <variable name="back" type="com.example.neube.smartdrive.Back"/>
+        <variable name="mMotor" type="com.example.neube.smartdrive.moveMotor"/>
     </data>
 
     <LinearLayout
@@ -17,7 +18,8 @@
             android:id="@+id/toggleButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@{back > 0 ? @drawable/check : @drawable/check2}"/>
+            android:background="@{back.mDrawableResource > 0 ? @drawable/check2 : @drawable/check}"
+            android:onClick="@{mMotor::moveMotor}"/>
 
 
     </LinearLayout>
